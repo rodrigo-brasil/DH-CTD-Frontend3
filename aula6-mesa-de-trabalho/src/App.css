@@ -1,0 +1,9 @@
+.App{
+  border: 2px solid black;
+  width: 500px;
+  padding: 2rem;
+}
+
+li{
+  font-size: 1.3em;
+}
