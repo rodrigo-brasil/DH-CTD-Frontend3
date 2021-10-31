@@ -4,6 +4,7 @@ footer{
   text-align: center;
   color: #777;
   margin-top: auto;
+  overflow: hidden;
 }
 
 footer .row{
@@ -18,6 +19,10 @@ footer .row:not(:last-child){
   margin-bottom: 1rem;
 }
 
+footer .row:not(:first-child){
+  border-top: 1px solid rgba(0,0,0,.09);
+}
+
 footer .row > *{
   flex: 1;
 }
@@ -25,10 +30,39 @@ footer .row > *{
 footer .collum{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 20%;
   min-width: 200px;
+  max-width: 300px;
+}
+
+footer .collum > *:not(h3){
+  padding: .5rem;
+}
+
+footer .collum h3{
+  margin-bottom: .4rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-bottom: solid 1px rgba(0,0,0,.09);
 }
 
 footer .collum p{
   text-align: left;
+  white-space: normal;
+}
+
+footer a{
+  display: inline-flex;
+  align-items: center;
+  gap:.5rem;
+  color: #777;
+}
+
+@media screen and (max-width: 900px) {
+  footer{
+    padding: 1rem 0;
+  }
+  footer .collum{
+    width: 25%;
+  }
 }

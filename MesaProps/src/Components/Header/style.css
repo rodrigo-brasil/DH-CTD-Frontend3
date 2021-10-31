@@ -20,6 +20,7 @@ input[type="checkbox"] {
   height: 70px;
   align-items: stretch;
   justify-content: space-between;
+  backdrop-filter: blur(10px) opacity(1) brightness(0.75);
 }
 
 .navbar a,

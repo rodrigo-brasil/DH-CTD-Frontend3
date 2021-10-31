@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { FaSearch, FaTimes, FaArrowRight, FaBars } from "react-icons/fa";
-import { AiOutlineBug } from "react-icons/ai";
+import { FaSearch, FaTimes, FaArrowRight, FaBars, FaRandom } from "react-icons/fa";
+
 import './style.css'
 
 
@@ -19,16 +19,16 @@ export default function Header() {
                     {toggle ? <FaTimes /> : <FaBars />}
                 </button>
 
-                <a href="#header" className="logo">{"<"}C<AiOutlineBug size="1.1em" color="#ffa500" />de{"/>"} </a>
+                <a href="#header" className="logo"><FaRandom size="1.1em" color="#ffa500" />Imagens</a>
 
                 <div className={toggle ? "navbar-menu active" :"navbar-menu"}>
-                    <a href="#">Home</a>
-                    <a href="#">Banners</a>
-                    <a href="#">Sobre</a>
-                    <a href="#">Contato</a>
+                    <a href="/">Home</a>
+                    <a href="#banner">Banner</a>
+                    <a href="#galeria">Galeria</a>
+                    <a href="#footer">Contato</a>
                 </div>
                 <input type="checkbox" id="show-search" />
-                <label for="show-search" className="search-icon" onClick={searchToggle}>
+                <label htmlFor ="show-search" className="search-icon" onClick={searchToggle}>
                     {search ? <FaTimes /> : <FaSearch />}
                 </label>
                 <div className="search-box">
