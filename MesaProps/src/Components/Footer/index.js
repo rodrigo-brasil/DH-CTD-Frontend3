@@ -16,7 +16,7 @@ export const Footer = () => {
                         <a target="_blank" href="https://github.com/rodrigo-brasil"><FaGithub color="#777" size="1.5em" />GitHub</a>
                     </div>
                     <div className="collum">
-                        <h3>Follow</h3>
+                        <h3>Lorem ipsum</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Quisquam, quidem.</p>
                     </div>
                 </div>
