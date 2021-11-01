@@ -157,11 +157,11 @@ input[type="checkbox"] {
     overflow-y: auto;
     padding-block: 1rem;
     transition: left 0.3s ease;
+    gap:1rem
   }
 
   .navbar .navbar-menu.active {
     left: 0;
-    gap:1rem
   }
 
   .navbar-menu a {
