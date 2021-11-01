@@ -12,8 +12,8 @@ export const Footer = () => {
                     </div>
                     <div className="collum">
                         <h3>Entre em contato</h3>
-                        <a target="_blank" href="https://www.linkedin.com/in/rodrigo-brasil-272312178/"><FaLinkedin color="#777" size="1.5em" />Linkedin</a>
-                        <a target="_blank" href="https://github.com/rodrigo-brasil"><FaGithub color="#777" size="1.5em" />GitHub</a>
+                        <a rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/rodrigo-brasil-272312178/"><FaLinkedin color="#777" size="1.5em" />Linkedin</a>
+                        <a rel="noreferrer" target="_blank" href="https://github.com/rodrigo-brasil"><FaGithub color="#777" size="1.5em" />GitHub</a>
                     </div>
                     <div className="collum">
                         <h3>Lorem ipsum</h3>

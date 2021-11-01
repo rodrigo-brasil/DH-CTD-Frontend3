@@ -150,15 +150,12 @@ input[type="checkbox"] {
     align-content: center;
     position: fixed;
     background: #14181f;
-    height: 100%;
     width: 100%;
     top: 70px;
     left: -100%;
     margin-left: 0;
-    max-width: 350px;
     overflow-y: auto;
     padding-block: 1rem;
-    border-top-right-radius: .5rem;
     transition: left 0.3s ease;
   }
 
