@@ -57,6 +57,9 @@ footer a{
   gap:.5rem;
   color: #777;
 }
+footer a:hover{
+  color: #ffa500;
+}
 
 @media screen and (max-width: 900px) {
   footer{
