@@ -1,0 +1,12 @@
+.card{
+    max-width: 300px;
+    cursor: pointer;
+}
+button{
+    margin-block: 1rem;
+}
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap:.5rem;
+}
