@@ -6,10 +6,11 @@ export default class Convidados extends Component {
         return (
             this.props.convidados.map((convidado) => {
                 return (
-                    <li>
+                    <li key={convidado.nome}>
                         {convidado.nome} está convidado para festa.
                     </li>
                 )
             })
-        )}
+        )
+    }
 }
