@@ -1,21 +1,34 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { viacepApi } from '../../services/api';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { TiArrowBackOutline } from 'react-icons/ti';
+import { FaSearch } from 'react-icons/fa'
 
 
 
 function ViaCep() {
 
+    const { cep } = useParams();
     const [resultado, setResultado] = useState({});
+
+    useEffect(() => {
+        if (cep)
+            getCep({ cep })
+
+    }, [cep])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = new FormData(e.target);
         const pesquisa = data.get('pesquisa');
 
-        viacepApi.get(`/${pesquisa}/json/`)
+        getCep({ cep: pesquisa })
+    }
+
+
+    const getCep = ({ cep }) => {
+        viacepApi.get(`/${cep}/json/`)
             .then(response => {
                 setResultado(response.data);
             })
@@ -33,10 +46,10 @@ function ViaCep() {
                     <TiArrowBackOutline />
                     Voltar</Link>
                 CEP API </h1>
-            {/* buscar cep */}
+
             <form onSubmit={handleSubmit}>
                 <label htmlFor="pesquisa">Digite o CEP</label>
-                <div class="input-group mb-3">
+                <div className="input-group mb-3">
                     <input
                         className="form-control"
                         type="text"
@@ -44,22 +57,23 @@ function ViaCep() {
                         name="pesquisa"
                         placeholder="CEP"
                     />
-                    <button className="btn btn-primary subimit" type="submit">Buscar</button>
+                    <button className="btn btn-primary subimit" type="submit"> <FaSearch className="me-1"/> Buscar</button>
                 </div>
             </form>
             {/* mostrar resultado */}
             <div>
-                {resultado && (
+                {resultado.cep && (
                     <>
-                        <h2>Resultado</h2>
-                        <ul class="list-group">
-                            <li class="list-group-item">CEP: <strong>{resultado.cep}</strong> </li>
-                            <li class="list-group-item">Logradouro: <strong>{resultado.logradouro}</strong></li>
-                            <li class="list-group-item">Complemento: <strong>{resultado.complemento}</strong></li>
-                            <li class="list-group-item">Bairro: <strong>{resultado.bairro}</strong></li>
-                            <li class="list-group-item">Localidade: <strong>{resultado.localidade}</strong></li>
-                            <li class="list-group-item">UF: <strong>{resultado.uf}</strong></li>
+                        <h2 className="text-center mt-3">Resultado</h2>
+                        <ul className="list-group">
+                            <li className="list-group-item">CEP: <strong>{resultado.cep}</strong> </li>
+                            <li className="list-group-item">Logradouro: <strong>{resultado.logradouro}</strong></li>
+                            <li className="list-group-item">Complemento: <strong>{resultado.complemento}</strong></li>
+                            <li className="list-group-item">Bairro: <strong>{resultado.bairro}</strong></li>
+                            <li className="list-group-item">Localidade: <strong>{resultado.localidade}</strong></li>
+                            <li className="list-group-item">UF: <strong>{resultado.uf}</strong></li>
                         </ul>
+                        <Link className="btn btn-outline-secondary mt-3" to={`/brasilapi/${resultado.cep}`}>Pesquisar no Brasil api</Link>
                     </>
                 )}
             </div>

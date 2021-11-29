@@ -11,7 +11,9 @@ export default function RouteList() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/viacep" element={<ViaCep />} />
+                <Route path="/viacep/:cep" element={<ViaCep />} />
                 <Route path="/brasilapi" element={<BrasilApi />} />
+                <Route path="/brasilapi/:cep" element={<BrasilApi />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
