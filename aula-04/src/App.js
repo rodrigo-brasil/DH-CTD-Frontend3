@@ -3,7 +3,7 @@ import Header from './Components/Header';
 import { Footer } from './Components/Footer';
 import { Banner } from './Components/Banner';
 import { Galeria } from './Components/Galeria';
-import { Tester } from './Components/Test';
+import { Tester } from './Components/Tester';
 import "dotenv/config";
 import './App.css';
 
