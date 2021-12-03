@@ -8,13 +8,14 @@ export const Tester = () => {
         const response = await fetch(`API_URL`);
         const data = await response.json();
         console.log(data);
+        setImages(data);
     }
 
     useEffect(() => { getImages() }, []);
 
     return (
         <div>
-            
+            {images}
         </div>
     )
 }
