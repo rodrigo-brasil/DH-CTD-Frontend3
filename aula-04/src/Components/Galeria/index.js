@@ -6,6 +6,7 @@ export const Galeria = () => {
     const [images, setImages] = useState([]);
 
     const getImages = async () => {
+        console.log(process.env.REACT_APP_VERCEL_ACCESS_KEY)
         const response = await fetch(`https://api.unsplash.com/photos/random/?client_id=${process.env.REACT_APP_VERCEL_ACCESS_KEY}&count=15`);
         const data = await response.json();
         console.log(data);
