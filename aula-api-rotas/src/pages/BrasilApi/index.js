@@ -9,6 +9,7 @@ function ViaCep() {
 
   const { cep } = useParams();
   const [resultado, setResultado] = useState({});
+  const [invalid, setInvalid] = useState(false);
 
   useEffect(() => {
     if (cep)
@@ -18,20 +19,24 @@ function ViaCep() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e.target)
     const data = new FormData(e.target);
-    const cep = data.get('cep');
-    getCep({ cep })
+    const obj = Object.fromEntries(data.entries());
+    getCep(obj)
   }
 
   const getCep = ({ cep }) => {
+    if(cep.length === 8 || cep.length === 9) {
     brasilApi.get(`/${cep}`)
       .then(response => {
         setResultado(response.data);
+        setInvalid(false);
       })
       .catch(error => {
-        console.log(error);
-      });
+        setInvalid(true);
+      })}
+    else {
+      setInvalid(true);
+    }
   }
 
 
@@ -46,9 +51,9 @@ function ViaCep() {
 
       <form onSubmit={handleSubmit}>
         <label htmlFor="cep">Digite o CEP</label>
-        <div className="input-group mb-3">
+        <div className="input-group mb-3 ">
           <input
-            className="form-control"
+            className={"form-control " + (invalid ? 'is-invalid' : '')}
             type="text"
             id="cep"
             name="cep"
