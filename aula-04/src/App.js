@@ -3,6 +3,7 @@ import Header from './Components/Header';
 import { Footer } from './Components/Footer';
 import { Banner } from './Components/Banner';
 import { Galeria } from './Components/Galeria';
+import { Tester } from './Components/Test';
 import "dotenv/config";
 import './App.css';
 
@@ -16,6 +17,7 @@ function App() {
         <p>Este é meu primeiro projeto em ReactJS</p>
       </Banner>
       <Galeria />
+      <Tester />
       <Footer />
     </div>
   );
